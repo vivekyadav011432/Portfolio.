@@ -456,7 +456,7 @@ function Portfolio() {
             <div className="desknav" style={{display:"flex",alignItems:"center",gap:2}}>
               {NAV.map(id=>(
                 <button key={id} className={`nl${activeNav===id?" act":""}`} onClick={()=>goto(id)}>
-                  {id==="video"?"🎬 Video":id.charAt(0).toUpperCase()+id.slice(1)}
+                  {id==="video"?"Video":id.charAt(0).toUpperCase()+id.slice(1)}
                 </button>
               ))}
               <button className="hirebtn" style={{marginLeft:6}} onClick={()=>goto("contact")}>Hire Me ✦</button>
@@ -500,7 +500,7 @@ function Portfolio() {
           <div className={`mmenu${menuOpen?" open":""}`}>
             {NAV.map(id=>(
               <button key={id} className={`mnb${activeNav===id?" act":""}`} onClick={()=>goto(id)}>
-                {id==="video"?"🎬 Video Editing":id.charAt(0).toUpperCase()+id.slice(1)}
+                {id==="video"?"Video Editing":id.charAt(0).toUpperCase()+id.slice(1)}
               </button>
             ))}
             <button className="mnb" onClick={()=>goto("contact")}>✦ Hire Me</button>
