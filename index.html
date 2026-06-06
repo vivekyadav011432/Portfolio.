@@ -77,7 +77,7 @@ const TESTIMONIALS = [
 const VIDEO_WORK = [
   { title:"True Detective intro",  desc:"A 2-minute showreel featuring colour-graded travel footage, smooth transitions and custom motion titles.", tags:["#premiere","#colorgrade","#reel"],   img:"🎬", src:"https://drive.google.com/file/d/1AAeo_n1PmNxLDOorb3xBvHdMNsJyWvPp/preview" },
   { title:"Product Ad — Tech",    desc:"30-second product ad with 3D motion graphics, particle overlays and professional sound design.",           tags:["#aftereffects","#motion","#3d"],     img:"📱", src:"https://drive.google.com/file/d/1anWBGCBkPuPi5zOtP8vGxYlseWjAzC3p/preview" },
-  { title:"Music Video Edit",     desc:"Sync-cut music video with beat-matched transitions, glitch effects and customised VFX overlays.",           tags:["#premiere","#vfx","#sync"],          img:"🎵", src:"https://drive.google.com/file/d/1lKDpQjc8PU_nt-3rUmZYiHTzNDMBzGUU/preview" },
+  { title:"Music Video Edit",     desc:"Sync-cut music video with beat-matched transitions, glitch effects and customised VFX overlays.",           tags:["#premiere","#vfx","#sync"],          img:"🎵", src:"https://drive.google.com/file/d/12DYjx3l8GQNs44AtD4DKorssBhDa4REl/preview" },
 ];
 
 /* ── WAVE CANVAS ─────────────────────────────────────── */
@@ -383,7 +383,14 @@ function Portfolio() {
   @media(max-width:900px){
     .desknav{display:none!important;}
     .hbg{display:flex!important;}
-    .heror{display:none!important;}
+    .heror{
+      position:relative!important;right:auto!important;bottom:auto!important;
+      width:100%!important;max-width:100%!important;
+      padding:0 20px 32px!important;
+      display:flex!important;flex-direction:column!important;align-items:center!important;
+      z-index:2!important;gap:0!important;
+    }
+    .heror-3d{display:none!important;}
     .tl2col .tl-l,.tl2col .tl-r{grid-column:1/-1!important;text-align:left!important;padding-left:0!important;padding-right:0!important;opacity:1!important;pointer-events:auto!important;}
     .tl2col .tl-d{display:none!important;}
     .tl2col{grid-template-columns:1fr!important;}
@@ -394,7 +401,7 @@ function Portfolio() {
     .ts-g{grid-template-columns:1fr!important;}
     .foot-row{flex-direction:column!important;text-align:center!important;}
     .srch-area{display:none!important;}
-    .hero-pad{padding-left:20px!important;padding-right:20px!important;}
+    .hero-pad{padding-left:20px!important;padding-right:20px!important;max-width:100%!important;}
   }
   @media(max-width:480px){
     .it{font-size:38px!important;gap:8px!important;}
@@ -507,7 +514,7 @@ function Portfolio() {
           </div>
 
           {/* ━━ HERO ━━ */}
-          <section id="home" style={{position:"relative",minHeight:"100vh",display:"flex",alignItems:"center",overflow:"hidden",paddingTop:64}}>
+          <section id="home" style={{position:"relative",minHeight:"100vh",display:"flex",alignItems:isMobile?"flex-start":"center",flexDirection:isMobile?"column":"row",overflow:"hidden",paddingTop:isMobile?80:64}}>
             <WaveCanvas/>
             <div style={{position:"absolute",top:"20%",right:"8%",width:480,height:480,background:"radial-gradient(circle,rgba(123,47,255,.18) 0%,transparent 70%)",borderRadius:"50%",pointerEvents:"none"}}/>
 
@@ -538,11 +545,11 @@ function Portfolio() {
             {/* Right: 3D shape stacked above code editor */}
             <div className="heror" style={{position:"absolute",right:"4%",bottom:"3%",display:"flex",flexDirection:"column",alignItems:"center",width:"min(460px,42vw)",zIndex:2,gap:0}}>
               {/* 3D floating icosahedron */}
-              <div style={{width:"100%",height:200,animation:"float 5s ease-in-out infinite",flexShrink:0}}>
+              <div className="heror-3d" style={{width:"100%",height:200,animation:"float 5s ease-in-out infinite",flexShrink:0}}>
                 <Float3D/>
               </div>
               {/* Code editor */}
-              <div style={{width:"100%",animation:"float 6s ease-in-out infinite",animationDelay:".7s"}}>
+              <div style={{width:"100%",animation:isMobile?"none":"float 6s ease-in-out infinite",animationDelay:".7s"}}>
                 <div style={{background:"rgba(123,47,255,.08)",border:"1px solid rgba(123,47,255,.22)",borderRadius:16,padding:22,backdropFilter:"blur(10px)",boxShadow:"0 0 60px rgba(123,47,255,.14)"}}>
                   <div style={{display:"flex",gap:6,marginBottom:12}}>
                     {["#ff5f57","#ffbd2e","#28c840"].map(c=><div key={c} style={{width:10,height:10,borderRadius:"50%",background:c}}/>)}
@@ -718,13 +725,13 @@ function Portfolio() {
                 ))}
               </div>
 
-              <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(270px,1fr))",gap:20}}>
+              <div style={{display:"grid",gridTemplateColumns:"1fr",gap:32}}>
                 {VIDEO_WORK.map((v,i)=>(
                   <div key={i} className={`vdcard fu${vis("video")?" v":""}`} style={{transitionDelay:`${i*.1}s`}}>
-                    <div style={{height:200,background:"linear-gradient(135deg,rgba(255,110,200,.18),rgba(123,47,255,.12))",display:"flex",alignItems:"center",justifyContent:"center",fontSize:50,position:"relative",overflow:"hidden"}}>
+                    <div style={{position:"relative",width:"100%",paddingTop:"56.25%",background:"linear-gradient(135deg,rgba(255,110,200,.18),rgba(123,47,255,.12))"}}>
                       {v.src
-                        ? <iframe src={v.src} width="100%" height="200" allow="autoplay" style={{border:"none",display:"block"}} allowFullScreen/>
-                        : <>{v.img}<div style={{position:"absolute",inset:0,background:"radial-gradient(circle at 70% 30%,rgba(255,100,180,.1),transparent)"}}/><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{width:42,height:42,borderRadius:"50%",background:"rgba(255,255,255,.1)",border:"1.5px solid rgba(255,255,255,.25)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(4px)"}}><span style={{fontSize:15,marginLeft:3}}>▶</span></div></div></>
+                        ? <iframe src={v.src} allow="autoplay; fullscreen" allowFullScreen style={{position:"absolute",top:0,left:0,width:"100%",height:"100%",border:"none",display:"block"}}/>
+                        : <div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:50}}>{v.img}<div style={{position:"absolute",inset:0,background:"radial-gradient(circle at 70% 30%,rgba(255,100,180,.1),transparent)"}}/><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{width:56,height:56,borderRadius:"50%",background:"rgba(255,255,255,.1)",border:"1.5px solid rgba(255,255,255,.25)",display:"flex",alignItems:"center",justifyContent:"center",backdropFilter:"blur(4px)"}}><span style={{fontSize:20,marginLeft:4}}>▶</span></div></div></div>
                       }
                     </div>
                     <div style={{padding:20}}>
