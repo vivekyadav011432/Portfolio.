@@ -118,9 +118,9 @@ const PROJECTS = [{
   link: "https://vivekyadav011432.github.io/Firework-project/"
 }, {
   title: "3D World Map",
-  desc: "Interactive 3D globe — explore countries, regions and geographic data in an immersive WebGL environment.",
+  desc: "Interactive 3D globe - explore countries, regions and geographic data in an immersive WebGL environment.",
   tags: ["#threejs", "#webgl", "#globe"],
-  imgSrc: "image_copy.png",
+  imgSrc: "image copy.png",
   link: "https://vivekyadav011432.github.io/world-map/"
 }, {
   title: "Snake Game",
@@ -130,7 +130,7 @@ const PROJECTS = [{
   link: "https://vivekyadav011432.github.io/Portfolio/snake.html"
 }, {
   title: "Portfolio v1",
-  desc: "My first portfolio — the origin story. Clean design showcasing early projects and skills.",
+  desc: "My first portfolio - the origin story. Clean design showcasing early projects and skills.",
   tags: ["#html", "#css", "#javascript"],
   imgSrc: "image.png",
   link: "https://vivekyadav011432.github.io/Portfolio/"
@@ -155,7 +155,7 @@ const VIDEO_WORK = [{
   img: "🎬",
   src: "https://drive.google.com/file/d/1AAeo_n1PmNxLDOorb3xBvHdMNsJyWvPp/preview"
 }, {
-  title: "Product Ad — Tech",
+  title: "Product Ad - Tech",
   desc: "30-second product ad with 3D motion graphics, particle overlays and professional sound design.",
   tags: ["#aftereffects", "#motion", "#3d"],
   img: "📱",
@@ -589,18 +589,18 @@ function Portfolio() {
   .cbtn:hover .xsvg{transform:rotate(90deg) scale(1.15)!important;transition:transform .18s ease!important;}
 
   /* ── NAV ── */
-  .nl{color:rgba(200,200,255,.55);font-size:15.5px;font-weight:500;background:none;border:none;cursor:pointer;padding:8px 15px;font-family:'Sora',sans-serif;transition:color .2s,background .2s;position:relative;letter-spacing:.01em;border-radius:8px;white-space:nowrap;}
+  .nl{color:rgba(200,200,255,.55);font-size:13.5px;font-weight:500;background:none;border:none;cursor:pointer;padding:6px 11px;font-family:'Sora',sans-serif;transition:color .2s,background .2s;position:relative;letter-spacing:.01em;border-radius:8px;white-space:nowrap;}
   .nl::after{content:'';position:absolute;bottom:2px;left:50%;right:50%;height:1.5px;background:linear-gradient(90deg,#7b2fff,#00c3ff);transition:left .3s ease,right .3s ease;border-radius:2px;}
   .nl:hover::after,.nl.act::after{left:15%;right:15%;}
   .nl:hover,.nl.act{color:#fff;}
-  .hirebtn{padding:10px 26px;background:linear-gradient(135deg,#7b2fff,#00c3ff);border:none;border-radius:999px;color:#fff;font-size:15px;font-weight:600;font-family:'Sora',sans-serif;cursor:pointer;box-shadow:0 0 20px rgba(123,47,255,.5);transition:all .25s;white-space:nowrap;}
+  .hirebtn{padding:8px 20px;background:linear-gradient(135deg,#7b2fff,#00c3ff);border:none;border-radius:999px;color:#fff;font-size:13px;font-weight:600;font-family:'Sora',sans-serif;cursor:pointer;box-shadow:0 0 20px rgba(123,47,255,.5);transition:all .25s;white-space:nowrap;}
   .hirebtn:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 0 32px rgba(0,195,255,.6);}
   /* Hamburger */
-  .hbg{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:8px;background:none;border:none;z-index:200;}
-  .hbg span{display:block;width:26px;height:2.5px;background:#fff;border-radius:2px;transition:all .3s;}
-  .mmenu{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(11,11,30,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(123,47,255,.2);padding:18px 28px;z-index:99;flex-direction:column;gap:2px;}
+  .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:200;}
+  .hbg span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .3s;}
+  .mmenu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(11,11,30,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(123,47,255,.2);padding:16px 24px;z-index:99;flex-direction:column;gap:2px;}
   .mmenu.open{display:flex;}
-  .mnb{color:rgba(200,200,255,.65);font-size:17px;font-weight:500;background:none;border:none;cursor:pointer;padding:15px 0;font-family:'Sora',sans-serif;text-align:left;border-bottom:1px solid rgba(123,47,255,.08);transition:color .2s;width:100%;}
+  .mnb{color:rgba(200,200,255,.65);font-size:15px;font-weight:500;background:none;border:none;cursor:pointer;padding:13px 0;font-family:'Sora',sans-serif;text-align:left;border-bottom:1px solid rgba(123,47,255,.08);transition:color .2s;width:100%;}
   .mnb:last-child{border-bottom:none;}
   .mnb:hover,.mnb.act{color:#fff;}
 
@@ -685,7 +685,7 @@ function Portfolio() {
   })), /*#__PURE__*/React.createElement("div", {
     className: `it${iPhase >= 6 ? " fly" : ""}`,
     style: {
-      transform: iPhase >= 6 ? isMobile ? `translate(calc(50vw - 50%), 12px) scale(0.42)` : `translate(22px, 14px) scale(0.36)` : `translate(calc(50vw - 50%), calc(50vh - 50%)) scale(1)`,
+      transform: iPhase >= 6 ? isMobile ? `translate(calc(50vw - 50%), 12px) scale(0.30)` : `translate(22px, 14px) scale(0.24)` : `translate(calc(50vw - 50%), calc(50vh - 50%)) scale(1)`,
       filter: introDone ? "drop-shadow(0 0 18px rgba(123,47,255,.55))" : "none",
       pointerEvents: introDone ? "auto" : "none",
       cursor: introDone ? "pointer" : "default"
@@ -721,10 +721,10 @@ function Portfolio() {
       left: 0,
       right: 0,
       zIndex: 100,
-      height: 72,
+      height: 64,
       display: "flex",
       alignItems: "center",
-      padding: "0 28px",
+      padding: "0 20px",
       gap: 10,
       background: scrolled ? "rgba(11,11,30,.92)" : "transparent",
       backdropFilter: scrolled ? "blur(20px)" : "none",
@@ -733,7 +733,7 @@ function Portfolio() {
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      width: isMobile ? 0 : 280,
+      width: isMobile ? 0 : 210,
       flexShrink: 0
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -745,7 +745,7 @@ function Portfolio() {
     style: {
       display: "flex",
       alignItems: "center",
-      gap: 6
+      gap: 2
     }
   }, NAV.map(id => /*#__PURE__*/React.createElement("button", {
     key: id,
@@ -1187,7 +1187,7 @@ function Portfolio() {
       lineHeight: 1.75,
       marginBottom: 50
     }
-  }, "Passionate about creating digital experiences that combine beautiful design with robust engineering — from code to canvas to camera.")), /*#__PURE__*/React.createElement("div", {
+  }, "Passionate about creating digital experiences that combine beautiful design with robust engineering - from code to canvas to camera.")), /*#__PURE__*/React.createElement("div", {
     className: "about-g",
     style: {
       display: "grid",
@@ -1452,7 +1452,7 @@ function Portfolio() {
       lineHeight: 1.75,
       marginTop: 12
     }
-  }, "Real projects — click any card to open the live site.")), /*#__PURE__*/React.createElement("div", {
+  }, "Real projects - click any card to open the live site.")), /*#__PURE__*/React.createElement("div", {
     className: "proj-g",
     style: {
       display: "grid",
@@ -1581,7 +1581,7 @@ function Portfolio() {
       lineHeight: 1.75,
       marginTop: 12
     }
-  }, "Beyond code — crafting cinematic stories through motion, colour and sound.")), /*#__PURE__*/React.createElement("div", {
+  }, "Beyond code - crafting cinematic stories through motion, colour and sound.")), /*#__PURE__*/React.createElement("div", {
     className: `fu${vis("video") ? " v" : ""}`,
     style: {
       transitionDelay: ".1s",
@@ -1866,7 +1866,7 @@ function Portfolio() {
       lineHeight: 1.75,
       marginBottom: 38
     }
-  }, "Have a project, collab, or just want to say hello?", /*#__PURE__*/React.createElement("br", null), "Hit the button below — it'll open straight in Gmail.")), /*#__PURE__*/React.createElement("div", {
+  }, "Have a project, collab, or just want to say hello?", /*#__PURE__*/React.createElement("br", null), "Hit the button below - it'll open straight in Gmail.")), /*#__PURE__*/React.createElement("div", {
     className: `fl${vis("contact") ? " v" : ""}`,
     style: {
       transitionDelay: ".15s"
